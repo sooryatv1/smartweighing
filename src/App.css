@@ -1,0 +1,147 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.form-section, .ticket-preview-section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 320px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.action-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.action-btn:hover {
+  background-color: #0b5ed7;
+}
+
+/* --- TICKET DESIGN --- */
+.ticket-container {
+  font-family: 'Courier New', Courier, monospace;
+  background: #fff;
+  border: 1px dashed #999;
+  padding: 20px;
+  max-width: 350px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.ticket-header {
+  text-align: center;
+}
+
+.ticket-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+}
+
+.ticket-header p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.net-row {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.ticket-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.thank-you {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #000;
+  margin: 15px 0;
+}
+
+/* --- PRINT RULES --- */
+/* This tells the browser to hide everything except the ticket when generating the PDF */
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  .form-section, h2 {
+    display: none !important;
+  }
+  .dashboard {
+    display: block;
+  }
+  .ticket-preview-section {
+    box-shadow: none;
+    padding: 0;
+  }
+  .ticket-container {
+    border: none; /* Remove dashed border for actual print */
+    max-width: 100%;
+  }
+}
